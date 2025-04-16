@@ -3,7 +3,7 @@ name: Run BTC Tracker Every 1 Minute
 on:
   schedule:
     - cron: "*/1 * * * *"  # Every 1 minute UTC
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  workflow_dispatch:
 
 jobs:
   run-tracker:
@@ -32,3 +32,10 @@ jobs:
         run: |
           python btc_tracker.py
 
+      - name: Commit and push updated CSV file
+        run: |
+          git config --global user.name "Your GitHub Username"
+          git config --global user.email "your-email@example.com"
+          git add btc_price_log.csv
+          git commit -m "Update BTC price log"
+          git push origin main
