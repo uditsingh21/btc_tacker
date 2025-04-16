@@ -1,9 +1,9 @@
-name: Run BTC Tracker Every 5 Minutes
+name: Run BTC Tracker Every 1 Minute
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Every 5 minutes UTC
-  workflow_dispatch:
+    - cron: "*/1 * * * *"  # Every 1 minute UTC
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   run-tracker:
@@ -31,3 +31,4 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           python btc_tracker.py
+
