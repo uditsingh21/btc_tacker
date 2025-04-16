@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 
 #loading the email credentials
 load_dotenv()
-EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
-EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-TO_EMAIL = os.getenv("TO_EMAIL")
+EMAIL_ADDRESS = os.getenv("SENDER_EMAIL")
+EMAIL_PASSWORD = os.getenv("APP_PASSWORD")
+TO_EMAIL = os.getenv("RECEIVER_EMAIL")
 
 
 #investment details
